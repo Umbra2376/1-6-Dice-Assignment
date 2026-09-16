@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Making_a_Die_Class
+namespace _1_6_Dice_Assignment
 {
     public class Die
     {
         private int _roll;
-        private Random _generator;
+        private static Random _generator;
 
         public Die()
         {
@@ -33,65 +33,63 @@ namespace Making_a_Die_Class
         {
             if (_roll == 1)
             {
-                Console.WriteLine("-----");
-                Console.WriteLine("|   |");
-                Console.WriteLine("| o |");
-                Console.WriteLine("|   |");
-                Console.WriteLine("-----");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("┌───────┐");
+                Console.WriteLine("|       |");
+                Console.WriteLine("|   O   |");
+                Console.WriteLine("|       |");
+                Console.WriteLine("└───────┘");
+                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 2)
             {
-                Console.WriteLine("-----");
-                Console.WriteLine("|o  |");
-                Console.WriteLine("|   |");
-                Console.WriteLine("|  o|");
-                Console.WriteLine("-----");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("┌───────┐");
+                Console.WriteLine("| O     |");
+                Console.WriteLine("|       |");
+                Console.WriteLine("|    O  |");
+                Console.WriteLine("└───────┘");
+                Console.ForegroundColor = ConsoleColor.White;
             }
 
             else if (_roll == 3)
             {
-                Console.WriteLine("-----");
-                Console.WriteLine("|o  |");
-                Console.WriteLine("| o |");
-                Console.WriteLine("|  o|");
-                Console.WriteLine("-----");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("┌───────┐");
+                Console.WriteLine("| O     |");
+                Console.WriteLine("|   O   |");
+                Console.WriteLine("|     O |");
+                Console.WriteLine("└───────┘");
+                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 4)
             {
-                Console.WriteLine("-----");
-                Console.WriteLine("|o o|");
-                Console.WriteLine("|   |");
-                Console.WriteLine("|o o|");
-                Console.WriteLine("-----");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("┌───────┐");
+                Console.WriteLine("| O   O |");
+                Console.WriteLine("|       |");
+                Console.WriteLine("| O   O |");
+                Console.WriteLine("└───────┘");
+                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 5)
             {
-                Console.WriteLine("-----");
-                Console.WriteLine("|o o|");
-                Console.WriteLine("| o |");
-                Console.WriteLine("|o o|");
-                Console.WriteLine("-----");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("┌───────┐");
+                Console.WriteLine("| O   O |");
+                Console.WriteLine("|   O   |");
+                Console.WriteLine("| O   O |");
+                Console.WriteLine("└───────┘");
+                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 6)
             {
-                Console.WriteLine("-----");
-                Console.WriteLine("|o o|");
-                Console.WriteLine("|o o|");
-                Console.WriteLine("|o o|");
-                Console.WriteLine("-----");
+                Console.WriteLine("┌───────┐");
+                Console.WriteLine("| O   O |");
+                Console.WriteLine("| O   O |");
+                Console.WriteLine("| O   O |");
+                Console.WriteLine("└───────┘");
             }
-            else
-            {
-                Console.WriteLine("-----");
-                Console.WriteLine("|   |");
-                Console.WriteLine("| ? |");
-                Console.WriteLine("|   |");
-                Console.WriteLine("-----");
-            }
-
-
-
-
         }
 
         public override string ToString()
