@@ -10,13 +10,20 @@ namespace _1_6_Dice_Assignment
     {
         private int _roll;
         private static Random _generator;
+        ConsoleColor _color;
 
         public Die()
         {
             _generator = new Random();
             _roll = _generator.Next(1, 7);
+            _color = ConsoleColor.White;
         }
 
+        public ConsoleColor Color
+        {
+            get { return _color; }
+            set { _color = value; }
+        }
 
         public int Roll
         {
@@ -31,56 +38,48 @@ namespace _1_6_Dice_Assignment
 
         public void DrawRoll()
         {
+            ConsoleColor _currentForecolor = Console.ForegroundColor;
+            Console.ForegroundColor = _color;
             if (_roll == 1)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("┌───────┐");
                 Console.WriteLine("|       |");
                 Console.WriteLine("|   O   |");
                 Console.WriteLine("|       |");
                 Console.WriteLine("└───────┘");
-                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 2)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("┌───────┐");
                 Console.WriteLine("| O     |");
                 Console.WriteLine("|       |");
                 Console.WriteLine("|    O  |");
                 Console.WriteLine("└───────┘");
-                Console.ForegroundColor = ConsoleColor.White;
             }
 
             else if (_roll == 3)
             {
-                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("┌───────┐");
                 Console.WriteLine("| O     |");
                 Console.WriteLine("|   O   |");
                 Console.WriteLine("|     O |");
                 Console.WriteLine("└───────┘");
-                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 4)
             {
-                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("┌───────┐");
                 Console.WriteLine("| O   O |");
                 Console.WriteLine("|       |");
                 Console.WriteLine("| O   O |");
                 Console.WriteLine("└───────┘");
-                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 5)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("┌───────┐");
                 Console.WriteLine("| O   O |");
                 Console.WriteLine("|   O   |");
                 Console.WriteLine("| O   O |");
                 Console.WriteLine("└───────┘");
-                Console.ForegroundColor = ConsoleColor.White;
             }
             else if (_roll == 6)
             {
@@ -90,6 +89,7 @@ namespace _1_6_Dice_Assignment
                 Console.WriteLine("| O   O |");
                 Console.WriteLine("└───────┘");
             }
+            Console.ForegroundColor = _currentForecolor;
         }
 
         public override string ToString()
